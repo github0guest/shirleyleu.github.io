@@ -8,7 +8,7 @@ new Vue({
     methods: {
         search(term) {
             this.newSearchTerm = term;
-            axios.post('http://gregoria.pythonanywhere.com/json/search/', JSON.stringify({text: this.searchTerm}))
+            axios.post('https://gregoria.pythonanywhere.com/json/search/', JSON.stringify({text: this.searchTerm}))
                 .then(response => (this.info = response.data))
                 .catch(error => {
                     console.log(error);
