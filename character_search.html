@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<h1>Foxtrot</h1>
+<div id="search">
+    <input type="text" v-model="searchTerm" placeholder="Try 'Skeeter Falls'">
+    <button v-on:click="search(searchTerm)">Search</button>
+
+    <section v-if="errored">
+        <p>Something's not working...</p>
+    </section>
+    <section v-else>
+        <div
+                v-for="date in info"
+                class="render_comic"
+        >
+            <p v-html=renderComic(date)></p>
+        </div>
+    </section>
+</div>
+<script src="character_search.js"></script>
+</body>
+</html>
