@@ -1,3 +1,5 @@
+Vue.component('paginate', VuejsPaginate)
+
 new Vue({
     el: '#search',
     data: {
@@ -9,6 +11,9 @@ new Vue({
         current_page: 1,
     },
     methods: {
+        clickCallback: function(pageNum) {
+            console.log(pageNum)
+        },
         renderComic(date) {
             //TODO: Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily
             // lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content.
