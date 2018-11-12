@@ -23,13 +23,6 @@
         >
             <p v-html=renderComic(date)></p>
         </div>
-        <paginate
-                :page-count="3"
-                :click-handler="clickCallback"
-                :prev-text="'Prev'"
-                :next-text="'Next'"
-                :container-class="'pagination'">
-        </paginate>
         <button v-on:click="search(searchTerm, info.current_page - 1)">Previous</button>
         <button v-on:click="search(searchTerm, info.current_page + 1)">Next</button>
     </section>

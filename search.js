@@ -7,7 +7,7 @@ new Vue({
         found: false,
         errored: false,
         searchTerm: '',
-        base_URL: 'http://127.0.0.1:5000',
+        base_URL: 'https://gregoria.pythonanywhere.com',
         page: 1,
     },
     methods: {
@@ -31,9 +31,6 @@ new Vue({
                     console.log(error);
                     this.errored = true
                 });
-            // if(this.info !== []){
-            //     this.found = true;
-            // }
         },
     },
 });
