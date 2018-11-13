@@ -19,7 +19,7 @@ new Vue({
         renderComic(date) {
             //TODO: Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily
             // lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content.
-            return date.display_name + `<br /><img src="` + this.base_URL + `/static/images/` + date.filename + `.gif">`
+            return date.display_name + `<br><a href="https://www.gocomics.com/foxtrot/` + date.filename.replace(/[-]/g,"/",-1) + `"><img src ="https://ft962543676.files.wordpress.com/2018/11/` + date.filename + `.gif"></a>`
         },
         search(term, target_page) {
             this.found  = true;
